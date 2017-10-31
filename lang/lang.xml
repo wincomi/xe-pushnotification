@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lang>
+	<item name="push_notification">
+		<value xml:lang="ko"><![CDATA[푸시 알림]]></value>
+	</item>
+	
+	<item name="firebase_server_key">
+		<value xml:lang="ko"><![CDATA[Firebase 서버 키]]></value>
+	</item>
+	<item name="firebase_server_key_desc">
+		<value xml:lang="ko"><![CDATA[Firebase - 설정 - 클라우드 메시징에서 서버 키를 확인할 수 있습니다.]]></value>
+	</item>
+	
+	<item name="use_ncenterlite">
+		<value xml:lang="ko"><![CDATA[알림센터 사용]]></value>
+	</item>
+	<item name="use_ncenterlite_desc">
+		<value xml:lang="ko"><![CDATA[알림센터 모듈에서 알림을 보낼 때 유저에게 푸시 알림을 함께 보냅니다. 전송되는 알림은 알림센터 모듈의 설정에 따릅니다.]]></value>
+	</item>
+	<item name="ncenterlite_not_installed">
+		<value xml:lang="ko"><![CDATA[알림센터 모듈이 설치되지 않아 설정할 수 없습니다.]]></value>
+	</item>
+	
+	<item name="pn_manage_device">
+		<value xml:lang="ko"><![CDATA[기기 관리]]></value>
+	</item>
+	<item name="pn_manage_device_desc">
+		<value xml:lang="ko"><![CDATA[기기를 삭제할 경우 기기로 푸시 알림이 전송되지 않습니다.]]></value>
+	</item>
+	<item name="pn_no_devices">
+		<value xml:lang="ko"><![CDATA[등록된 기기가 없습니다.]]></value>
+	</item>
+	<item name="device_name">
+		<value xml:lang="ko"><![CDATA[기기 이름]]></value>
+	</item>
+	<item name="no_device_name">
+		<value xml:lang="ko"><![CDATA[기기 이름이 없습니다.]]></value>
+	</item>
+</lang>

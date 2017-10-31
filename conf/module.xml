@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+	<grants />
+	<permissions />
+	<actions>
+		<action name="dispPushnotificationManageDevice" type="view" permission="member" />
+		
+		<action name="procPushnotificationInsertDevice" type="controller" />
+		<action name="procPushnotificationDeleteDevice" type="controller" />
+		
+		<action name="dispPushnotificationAdminConfig" type="view" admin_index="true" standalone="true" />
+		
+		<action name="procPushnotificationAdminSaveConfig" type="controller" />
+		<!-- <action name="procPushnotificationSendMessage" type="controller" /> test -->
+	</actions>
+	<menus>
+		<menu name="pushnotification" type="all">
+			<title xml:lang="ko">푸시 알림 지원</title>
+		</menu>
+	</menus>
+</module>

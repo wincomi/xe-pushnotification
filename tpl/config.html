@@ -1,0 +1,75 @@
+<include target="header.html" />
+
+<div cond="$XE_VALIDATOR_MESSAGE && $XE_VALIDATOR_ID == 'modules/krzip/tpl/config/1'" class="message {$XE_VALIDATOR_MESSAGE_TYPE}">
+	<p>{$XE_VALIDATOR_MESSAGE}</p>
+</div>
+
+<form ruleset="save_config" class="x_form-horizontal" action="./" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="module" value="pushnotification" />
+	<input type="hidden" name="act" value="procPushnotificationAdminSaveConfig" />
+	<input type="hidden" name="success_return_url" value="{getRequestUriByServerEnviroment()}" />
+	<section class="section">
+		<h1>{$lang->cmd_setup}</h1>
+		<div class="x_control-group">
+			<div class="x_control-group">
+				<label class="x_control-label">{$lang->firebase_server_key}</label>
+				<div class="x_controls">
+					<input type="text" name="firebase_server_key" value="{$config->firebase_server_key}" class="x_form-control" style="width: 100%; max-width: 500px" />
+					<p class="x_help-block">{$lang->firebase_server_key_desc}</p>
+				</div>
+			</div>
+		</div>
+		<div class="x_control-group">
+			<div class="x_control-group">
+				<label class="x_control-label">{$lang->use_ncenterlite}</label>
+				<div class="x_controls">
+					{@
+						$installed_ncenterlite = getModel('ncenterlite');
+					}
+					<select name="use_ncenterlite" disabled="disabled"|cond="!$installed_ncenterlite">
+						<option value="N" selected="selected"|cond="$config->use_ncenterlite == 'N'">{$lang->notuse}</option>
+						<option value="Y" selected="selected"|cond="$config->use_ncenterlite == 'Y'">{$lang->use}</option>
+					</select>
+					<p class="x_help-block">{$lang->use_ncenterlite_desc}</p>
+					<p class="x_help-block" style="color: #b94a48" cond="!$installed_ncenterlite">{$lang->ncenterlite_not_installed}</p>
+				</div>
+			</div>
+		</div>		
+	</section>
+	
+	<section class="section">
+		<h1>{$lang->cmd_set_design_info}</h1>
+		<div class="x_control-group">
+			<label class="x_control-label" for="skin">{$lang->skin}</label>
+			<div class="x_controls">
+				<select name="skin" id="skin" style="width:auto">
+					<option loop="$skin_list => $key, $val" value="{$key}" selected="selected"|cond="$module_info->skin== $key || (!$module_info->skin && $key == 'default')">{$val->title}</option>
+				</select>
+			</div>
+		</div>
+	</section>
+	<div class="x_clearfix btnArea">
+		<div class="x_pull-right">
+			<button class="x_btn x_btn-primary" type="submit">{$lang->cmd_registration}</button>
+		</div>
+	</div>
+</form>
+
+<!--// <form ruleset="insertDevice" class="x_form-horizontal" action="./" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="module" value="pushnotification" />
+	<input type="hidden" name="act" value="procPushnotificationInsertDevice" />
+	<section class="section">
+		<h1>insertDevice</h1>
+		<div class="x_control-group">
+			<label class="x_control-label">{$lang->pn_device_id}</label>
+			<div id="menu_list" class="x_controls">
+				<input type="text" name="device_id" class="x_form-control" />
+			</div>
+		</div>
+	</section>
+	<div class="x_clearfix btnArea">
+		<div class="x_pull-right">
+			<button class="x_btn x_btn-primary" type="submit">{$lang->cmd_registration}</button>
+		</div>
+	</div>
+</form> -->

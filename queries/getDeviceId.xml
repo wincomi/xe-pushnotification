@@ -1,0 +1,11 @@
+<query id="getDeviceId" action="select">
+	<tables>
+		<table name="pushnotification_devices" />
+	</tables>
+	<columns>
+		<column name="device_id" />
+	</columns>
+    <conditions>
+        <condition operation="equal" column="member_srl" var="member_srl" notnull="notnull" />
+    </conditions>
+</query>

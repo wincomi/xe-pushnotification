@@ -1,0 +1,41 @@
+<load target="css/pushnotification.css" />
+<load target="js/pushnotification.js" />
+
+<div class="xm">
+	<ul class="nav nav-tabs" cond="$is_logged && $logged_info->menu_list && (!$member_srl || $member_srl == $logged_info->member_srl)">
+		<li loop="$logged_info->menu_list=>$key, $val" class="active"|cond="$key == $act">
+			<a href="{getUrl('', 'act', $key, 'mid', $mid, 'vid', $vid)}">{lang($val)}</a>
+		</li>
+	</ul>
+	
+	<h1>{$lang->pn_manage_device}</h1>
+	<p class="help-block">{$lang->pn_manage_device_desc}</p>
+	
+	<table class="table table-striped table-hover">
+		<thead>
+			<tr>
+				<th>{$lang->device_name}</th>
+				<th>{$lang->cmd_delete}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr loop="$devices => $key, $val">
+				<td>
+					<!--@if($val->device_name)-->
+						{$val->device_name}
+					<!--@else-->
+						{$lang->no_device_name}
+					<!--@end-->
+				</td>
+				<td>
+					<a href="#" onclick="doDeleteDevice({$val->srl}, '{$lang->pn_manage_device_desc} {$lang->confirm_delete}');return false;">{$lang->cmd_delete}</a>
+				</td>
+			</tr>
+			<tr cond="!$devices">
+				<td colspan="2">
+					{$lang->pn_no_devices}
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

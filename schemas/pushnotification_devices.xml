@@ -1,0 +1,6 @@
+<table name="pushnotification_devices">
+	<column name="srl" type="number" size="11" notnull="notnull" primary_key="primary_key" />
+	<column name="member_srl" type="number" size="11" notnull="notnull" />
+	<column name="device_name" type="varchar" size="255" />
+	<column name="device_id" type="varchar" size="255" notnull="notnull" primary_key="primary_key" />
+</table>
